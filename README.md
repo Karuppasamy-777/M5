@@ -31,7 +31,7 @@ int main() {
 ```
 ## OUTPUT:
 
- 	![alt text](<Screenshot 2025-10-22 161947.png>)
+![alt text](<Screenshot 2025-10-22 161947.png>)
 
 
 
