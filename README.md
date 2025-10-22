@@ -10,8 +10,28 @@ Write a C program to convert a 23.65 into 25 using pointer
 
 ## PROGRAM:
 
+```
+#include <stdio.h>
+
+int main() {
+    float num = 23.65;
+    float *ptr;
+
+    // Point to the address of num
+    ptr = &num;
+
+    // Modify the value using pointer
+    *ptr = 25.0;
+
+    // Display the result
+    printf("Modified value: %.2f\n", num);
+
+    return 0;
+}
+```
 ## OUTPUT:
- 	
+
+ 	![alt text](<Screenshot 2025-10-22 161947.png>)
 
 
 
@@ -45,7 +65,28 @@ Write a C program to calculate the Product of first 12 natural numbers using Rec
 6.	Print the result, indicating it is the product of the first 12 natural numbers.
 
 ## PROGRAM:
+```
+#include <stdio.h>
+
+// Recursive function to calculate factorial
+long long product(int n) {
+    if (n == 1)
+        return 1;
+    else
+        return n * product(n - 1);
+}
+
+int main() {
+    int num = 12;
+    long long result = product(num);
+
+    printf("Product of first %d natural numbers is: %lld\n", num, result);
+
+    return 0;
+}
+```
 ## OUTPUT:
+![alt text](<Screenshot 2025-10-22 162236.png>)
          		
 ## RESULT:
 
@@ -69,12 +110,38 @@ Write C Program to find Sum of each row of a Matrix
 
 ## PROGRAM:
 
+```
+#include <stdio.h>
+
+int main() {
+    int rows, cols;
+    printf("Enter number of rows: ");
+    scanf("%d", &rows);
+    printf("Enter number of columns: ");
+    scanf("%d", &cols);
+    int matrix[rows][cols];
+    printf("Enter elements of the matrix:\n");
+    for (int i = 0; i < rows; i++) {
+        for (int j = 0; j < cols; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+    for (int i = 0; i < rows; i++) {
+        int rowSum = 0;
+        for (int j = 0; j < cols; j++) {
+            rowSum += matrix[i][j];
+        }
+        printf("Sum of row %d = %d\n", i + 1, rowSum);
+    }
+    return 0;
+}
+```
 
 
 ## OUTPUT
 
 
- 
+ ![alt text](<Screenshot 2025-10-22 162512.png>)
  
 
  ## RESULT
@@ -97,9 +164,37 @@ Write C program for the below pyramid string pattern. Enter a string: PROGRAM En
 
 ## PROGRAM:
 
+```
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    char str[100];
+    int rows;
+
+    // Input string
+    printf("Enter a string: ");
+    scanf("%s", str);
+
+    // Input number of rows
+    printf("Enter number of rows: ");
+    scanf("%d", &rows);
+
+    // Print the pattern
+    for (int i = 1; i <= rows; i++) {
+        for (int j = 0; str[j] != '\0'; j++) {
+            printf("%c ", str[j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
+```
 
  ## OUTPUT
 
+![alt text](<Screenshot 2025-10-22 162927.png>)
  
 
 ## RESULT
@@ -133,8 +228,34 @@ Step 6: End the program.
 
 ## PROGRAM
 
-## OUTPUT
+```
+#include <stdio.h>
 
+int main() {
+    int arr[6];
+    int *ptr;
+
+    // Pointer points to the start of the array
+    ptr = arr;
+
+    // Input 6 elements
+    printf("Enter 6 integer elements:\n");
+    for (int i = 0; i < 6; i++) {
+        scanf("%d", ptr + i);  // Using pointer arithmetic to store values
+    }
+
+    // Display elements using pointer
+    printf("You entered:\n");
+    for (int i = 0; i < 6; i++) {
+        printf("%d ", *(ptr + i));  // Dereferencing pointer to access values
+    }
+
+    printf("\n");
+    return 0;
+}
+```
+## OUTPUT
+![alt text](<Screenshot 2025-10-22 163201.png>)
  
 
 ## RESULT
